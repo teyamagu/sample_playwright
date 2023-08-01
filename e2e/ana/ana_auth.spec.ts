@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test('ana login test', async ({ page }) => {
+test.describe.configure({ mode: 'serial' });
+
+test('ana login test and create authenticated status file', async ({ page }) => {
   const authFile = '.auth/auth.json';
 
   await page.goto('https://www.ana.co.jp/');
@@ -14,7 +16,7 @@ test('ana login test', async ({ page }) => {
   await page.context().storageState({ path: authFile });
 });
 
-test('ana login view test', async ({ page }) => {
+test('ana top view test before login', async ({ page }) => {
   await page.goto('https://www.ana.co.jp/');
   await expect.soft(page.getByRole('link', { name: 'ログイン' })).toBeVisible();
 });
@@ -22,7 +24,7 @@ test('ana login view test', async ({ page }) => {
 test.describe(() => {
   test.use({ storageState: '.auth/auth.json' });
 
-  test('ana already login test', async ({ page }) => {
+  test('ana top view test after authenticated', async ({ page }) => {
     await page.goto('https://www.ana.co.jp/');
     await expect.soft(page.getByRole('link', { name: 'ログアウト' })).toBeVisible();
   });
