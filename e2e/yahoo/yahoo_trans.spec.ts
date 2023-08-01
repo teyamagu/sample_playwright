@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { YahooTopIndex } from "../page/yahoo/top";
-import { YahooAuctions } from "../page/yahoo/auctions";
+import { YahooTopIndex } from "@pages/yahoo/top";
+import { YahooAuctions } from "@pages/yahoo/auctions";
 
 test("yahoo top page move to auctions page", async ({ page }) => {
   const yahooTopIndex = new YahooTopIndex(page);
