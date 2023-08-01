@@ -8,6 +8,7 @@
   "author": "Teppei YAMAGUCHI",
   "license": "",
   "devDependencies": {
-    "@playwright/test": "^1.35.1"
+    "@playwright/test": "^1.35.1",
+    "dotenv": "^16.3.1"
   }
 }
