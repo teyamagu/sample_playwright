@@ -18,5 +18,5 @@ test("yahoo top page api response", async ({ page }) => {
   let str = (
     await (await page.request.get("https://www.yahoo.co.jp/")).text()
   ).toString();
-  await expect.soft(str).toContain("<title>Yahoo! JAPAN2</title>");
+  await expect.soft(str).toContain("<title>Yahoo! JAPAN</title>");
 });
