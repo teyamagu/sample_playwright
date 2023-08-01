@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {},
   "keywords": [],
-  "author": "",
+  "author": "Teppei YAMAGUCHI",
   "license": "",
   "devDependencies": {
     "@playwright/test": "^1.35.1"
