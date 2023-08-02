@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 
-export class YahooTopIndex {
+export class YahooIndex {
   readonly page: Page;
   readonly mainTab: Locator;
   readonly mainPanel: Locator;

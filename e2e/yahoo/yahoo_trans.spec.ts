@@ -1,20 +1,20 @@
 import { test, expect } from "@playwright/test";
-import { YahooTopIndex } from "@pages/yahoo/top";
+import { YahooIndex } from "@pages/yahoo/index";
 import { YahooAuctions } from "@pages/yahoo/auctions";
 
 test("yahoo top page move to auctions page", async ({ page }) => {
-  const yahooTopIndex = new YahooTopIndex(page);
+  const yahooIndex = new YahooIndex(page);
   const yahooAuctions = new YahooAuctions(page);
 
-  await yahooTopIndex.load();
-  await yahooTopIndex.auctionsServiceLink.click();
+  await yahooIndex.load();
+  await yahooIndex.auctionsServiceLink.click();
   await expect.soft(yahooAuctions.bannerLink).toBeVisible();
 });
 
 test("yahoo top page api response", async ({ page }) => {
-  const yahooTopIndex = new YahooTopIndex(page);
+  const yahooIndex = new YahooIndex(page);
 
-  await yahooTopIndex.load();
+  await yahooIndex.load();
   let str = (
     await (await page.request.get("https://www.yahoo.co.jp/")).text()
   ).toString();
