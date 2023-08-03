@@ -15,7 +15,7 @@ test("yahoo top page api response", async ({ page }) => {
   const yahooIndex = new YahooIndex(page);
 
   await yahooIndex.load();
-  let str = (
+  const str = (
     await (await page.request.get("https://www.yahoo.co.jp/")).text()
   ).toString();
   await expect.soft(str).toContain("<title>Yahoo! JAPAN</title>");
