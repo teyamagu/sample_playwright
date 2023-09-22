@@ -13,7 +13,7 @@ export class YahooIndex {
 
   constructor(page: Page) {
     this.page = page;
-    this.mainTab = page.getByRole("link", { name: /主要/ });
+    this.mainTab = page.getByRole("link", { name: /^主要$/ });
     this.mainPanel = page
       .getByRole("tabpanel", { name: "主要" })
       .locator("div");
@@ -21,10 +21,10 @@ export class YahooIndex {
       .getByRole("tabpanel", { name: "主要" })
       .locator("a");
 
-    this.bizTab = page.getByRole("link", { name: "経済" });
+    this.bizTab = page.getByRole("link", { name: /^経済$/ });
     this.bizPanel = page.getByRole("tabpanel", { name: "経済" }).locator("div");
 
-    this.entertainmentTab = page.getByRole("link", { name: "エンタメ" });
+    this.entertainmentTab = page.getByRole("link", { name: /^エンタメ$/ });
     this.entertainmentPanel = page
       .getByRole("tabpanel", { name: "エンタメ" })
       .locator("div");
